@@ -982,8 +982,12 @@
 			var tour_type = document.getElementById('tour_type').value;
 			var dest 	= document.getElementById('dest').value;
 			var duration = document.getElementById('duration').value;
-			window.location = "?a=search_tours&tour_type="+tour_type+"&dest="+dest+"&duration="+duration;
-			//window.location = "?a=search_tours&duration="+duration;
+			var params = [];
+			if (arrive_date) params.push("arrive_date=" + encodeURIComponent(arrive_date));
+			if (tour_type) params.push("tour_type=" + encodeURIComponent(tour_type));
+			if (dest) params.push("dest=" + encodeURIComponent(dest));
+			if (duration) params.push("duration=" + encodeURIComponent(duration));
+			window.location = "search_tours.html" + (params.length ? "?" + params.join("&") : "");
 			}
 			</script>
 		</body>

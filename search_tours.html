@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="myanmar escapade travels and tours,myanmar tour search,myanmar package tours">
+    <meta name="description" content="Search Myanmar Escapade tours by type, destination and duration.">
+    <meta name="author" content="Imedia International (Myanmar) Co., Ltd">
+    <title>Search Tours | Myanmar Escapade Travels & Tours</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css%3Fv=1.0.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
+    <style>
+      body {
+        background: #f6f1eb;
+      }
+
+      .search-topbar {
+        background: #ffffff;
+        border-bottom: 1px solid #e7ddd1;
+        padding: 14px 0;
+      }
+
+      .search-brand {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+      }
+
+      .search-brand img {
+        max-height: 56px;
+      }
+
+      .search-hero {
+        background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url("images/page-banner1.jpg") center center / cover no-repeat;
+        color: #ffffff;
+        padding: 70px 0 110px;
+      }
+
+      .search-shell {
+        background: #ffffff;
+        border-radius: 4px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        margin-top: -52px;
+        padding: 30px;
+      }
+
+      .search-shell label {
+        color: #4f443c;
+        display: block;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .search-shell .btn {
+        margin-top: 30px;
+        width: 100%;
+      }
+
+      .results-header {
+        padding: 35px 0 20px;
+      }
+
+      .results-header p {
+        color: #6b6158;
+        margin: 0;
+      }
+
+      .search-card {
+        background: #ffffff;
+        border: 1px solid #eadfd4;
+        border-radius: 4px;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .search-card-image {
+        height: 220px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .search-card-body {
+        padding: 22px;
+      }
+
+      .search-card-type {
+        color: #f37647;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .search-card-title {
+        font-size: 22px;
+        margin-top: 0;
+        min-height: 56px;
+      }
+
+      .search-card-meta {
+        color: #5f5751;
+        min-height: 42px;
+      }
+
+      .empty-state {
+        background: #fff8f3;
+        border: 1px solid #edd9ca;
+        border-radius: 4px;
+        color: #5f5751;
+        margin-bottom: 40px;
+        padding: 24px;
+        text-align: center;
+      }
+
+      .search-footer {
+        background: #111111;
+        color: #cccccc;
+        margin-top: 20px;
+        padding: 26px 0;
+      }
+
+      .search-footer a {
+        color: #f7b18e;
+      }
+
+      @media (max-width: 767px) {
+        .search-hero {
+          padding: 50px 0 90px;
+        }
+
+        .search-shell {
+          margin-top: -36px;
+          padding: 20px;
+        }
+
+        .search-shell .btn {
+          margin-top: 12px;
+        }
+
+        .search-card-title,
+        .search-card-meta {
+          min-height: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-topbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="search-brand">
+              <a href="index.html"><img src="images/logo.png" alt="Myanmar Escapade"></a>
+              <div>
+                <strong>Myanmar Escapade Travels & Tours</strong><br>
+                <span>Search available package tours from the static site export.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 text-right" style="padding-top: 14px;">
+            <a class="btn btn-grey" href="index.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="search-hero">
+      <div class="container">
+        <h1 style="margin-bottom: 10px;">Find Your Holiday Destination</h1>
+        <p style="font-size: 18px; margin: 0; max-width: 720px;">Search Myanmar Escapade tours by arrival date, type, destination and duration.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="search-shell">
+        <form id="tour-search-form">
+          <div class="row">
+            <div class="col-md-3">
+              <label for="arrival-date">Expected Date of Arrival</label>
+              <input type="text" class="form-control" id="arrival-date" name="arrive_date" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="col-md-3">
+              <label for="tour_type">Type of Tour</label>
+              <select name="tour_type" id="tour_type" class="form-control">
+                <option value="">Any Type</option>
+                <option value="Festival Tour">Festival Tour</option>
+                <option value="Leisure Tour">Leisure Tour</option>
+                <option value="Trekking Tour">Trekking Tour</option>
+                <option value="Cruise Tour">Cruise Tour</option>
+                <option value="Golf Tour">Golf Tour</option>
+                <option value="Adventure Tour">Adventure Tour</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="dest">Destination</label>
+              <select name="dest" id="dest" class="form-control">
+                <option value="">Any Destination</option>
+                <option value="Yangon">Yangon</option>
+                <option value="Mandalay">Mandalay</option>
+                <option value="Bagan">Bagan</option>
+                <option value="Inle Lake">Inle Lake</option>
+                <option value="Golden Rock">Golden Rock</option>
+                <option value="Beach">Beach</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="duration">Duration</label>
+              <select name="duration" id="duration" class="form-control">
+                <option value="">Any Duration</option>
+                <option value="Half Day">Half Day</option>
+                <option value="Full Day">Full Day</option>
+                <option value="2 days / 1 nights">2 days / 1 nights</option>
+                <option value="3 days / 2 nights">3 days / 2 nights</option>
+                <option value="4 days / 3 nights">4 days / 3 nights</option>
+                <option value="5 days / 4 nights">5 days / 4 nights</option>
+                <option value="6 days / 5 nights">6 days / 5 nights</option>
+                <option value="7 days / 6 nights">7 days / 6 nights</option>
+                <option value="8 days / 7 nights">8 days / 7 nights</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-red">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="results-header">
+        <h2 id="results-title">Tour Results</h2>
+        <p id="results-summary"></p>
+      </div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <h3 style="margin-top: 0;">No tours matched this search.</h3>
+        <p style="margin-bottom: 0;">Try a different destination, tour type or duration.</p>
+      </div>
+
+      <div id="search-results" class="row"></div>
+    </div>
+
+    <footer class="search-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            Myanmar Escapade Travel & Tours Co. Ltd. | No. 26, Thamardi Street, Zwezone 8 Ward, Mayangone Township, Yangon, Myanmar.
+          </div>
+          <div class="col-sm-4 text-right">
+            <a href="mailto:info@myanmarescapadetravel.com">info@myanmarescapadetravel.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/tour-search-data.js"></script>
+    <script src="js/search-tours.js"></script>
+  </body>
+</html>

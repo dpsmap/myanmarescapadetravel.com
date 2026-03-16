@@ -1,0 +1,55 @@
+content:
+  - name: home
+    label: Home Page
+    type: file
+    path: index.html
+    fields:
+      - name: body
+        label: HTML Content
+        type: code
+        options:
+          language: html
+
+  - name: about
+    label: About Us Page
+    type: file
+    path: index.html?a=about_us.html
+    fields:
+      - name: body
+        label: HTML Content
+        type: code
+        options:
+          language: html
+
+  - name: accommodation
+    label: Accommodation Page
+    type: file
+    path: index.html?a=accommodation.html
+    fields:
+      - name: body
+        label: HTML Content
+        type: code
+        options:
+          language: html
+
+  - name: air_ticketing
+    label: Air Ticketing Page
+    type: file
+    path: index.html?a=air-ticketing.html
+    fields:
+      - name: body
+        label: HTML Content
+        type: code
+        options:
+          language: html
+
+  - name: bus_ticket
+    label: Bus Ticket Page
+    type: file
+    path: index.html?a=bus_ticket.html
+    fields:
+      - name: body
+        label: HTML Content
+        type: code
+        options:
+          language: html
